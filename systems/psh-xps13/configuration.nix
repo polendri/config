@@ -28,12 +28,19 @@
 { config, pkgs, ... }:
 
 {
+  # Configuration submodules
   imports =
     [
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
+  # NixOS
   system.stateVersion = "17.03";
+  nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 30d";
+  };
 
   # Boot and filesystems
   boot = {
