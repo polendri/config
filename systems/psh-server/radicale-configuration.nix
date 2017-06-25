@@ -58,7 +58,7 @@ in
   
         # Htpasswd encryption method
         # Value: plain | sha1 | ssha | crypt | bcrypt | md5
-        htpasswd_encryption = crypt
+        htpasswd_encryption = bcrypt
         
         
         [rights]
