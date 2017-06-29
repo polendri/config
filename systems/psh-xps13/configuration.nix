@@ -137,18 +137,20 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    atom
+    ark
     curl
     docker_compose
     firefox
     gimp
     git
+    kate
     okular
     nodePackages.node2nix
     tmux
     unetbootin
     vim
     wget
+    zip
   ];
 
 }
