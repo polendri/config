@@ -10,14 +10,17 @@ set encoding=utf8   " Set UTF8 as the standard encoding
 
 " Colours
 syntax enable  " Enable syntax highlighting
+set background=dark
+colorscheme solarized
 
 " Netrw
-let g:netrw_banner = 0        " Disable directory banner
-let g:netrw_liststyle = 3     " Use tree view style by default
-let g:netrw_browse_split = 4  " Open files in previous window
-let g:netrw_winsize = 20      " Width of 25% of screen
-let g:netrw_altv = 1          " Vertical split puts window and cursor on the right instead of the left
-let g:netrw_list_hide = netrw_gitignore#Hide()  " Hide files matched by .gitignore
+let g:netrw_banner=0                          " Disable directory banner
+let g:netrw_liststyle=3                       " Use tree view style by default
+let g:netrw_browse_split=4                    " Open files in previous window
+let g:netrw_winsize=15                        " Width of 25% of screen
+let g:netrw_altv=1                            " Vertical split puts window and cursor on the right instead of the left
+let g:netrw_list_hide=netrw_gitignore#Hide()  " Hide files matched by .gitignore
+let g:netrw_list_hide.=',.git'                " Additional files to ignore
 
 " Finding files
 set path+=**  " Search into subfolders, and allow tab completion
@@ -56,8 +59,6 @@ set list               " Display tabs visually
 set listchars=tab:·\   "
 
 " Navigation
-map j gj          " Make j and k navigate across wrapped lines
-map k gk          "
 map <C-j> <C-W>j  " Quicker shortcuts for moving between windows
 map <C-k> <C-W>k  "
 map <C-h> <C-W>h  "
