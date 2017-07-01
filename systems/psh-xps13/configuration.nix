@@ -57,6 +57,11 @@
   hardware = {
     bluetooth.enable = true;
     pulseaudio.enable = true;
+    cpu.intel.updateMicrocode = true;
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+    };
   };
   powerManagement.enable = true;
 
@@ -149,6 +154,7 @@
     nox
     okular
     nodePackages.node2nix
+    steam
     tmux
     unetbootin
     unzip
