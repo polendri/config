@@ -140,11 +140,13 @@
     ag
     ark
     curl
+    discord
     docker_compose
     firefox
     gimp
     git
     kate
+    nox
     okular
     nodePackages.node2nix
     tmux
