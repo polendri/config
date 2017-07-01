@@ -23,8 +23,11 @@ let g:netrw_list_hide=netrw_gitignore#Hide()  " Hide files matched by .gitignore
 let g:netrw_list_hide.=',.git'                " Additional files to ignore
 
 " Finding files
-set path+=**  " Search into subfolders, and allow tab completion
-set wildmenu  " Display all matching files when tab completing
+set path+=**                     " Search into subfolders, and allow tab completion
+set wildmenu                     " Display all matching files when tab completing
+if executable('ag')              " Use ag as ack.vim program if it exists
+  let g:ackprg = 'ag --vimgrep'  " 
+endif                            "
 
 " Searching files
 set ignorecase  " Ignore case when searching

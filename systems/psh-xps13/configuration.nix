@@ -137,6 +137,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    ag
     ark
     curl
     docker_compose
@@ -148,6 +149,7 @@
     nodePackages.node2nix
     tmux
     unetbootin
+    unzip
     vim
     wget
     zip
