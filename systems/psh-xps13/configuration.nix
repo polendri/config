@@ -69,6 +69,12 @@
   networking = {
     firewall = {
       allowPing = true;
+      allowedTCPPortRanges = [
+        { from = 1714; to = 1764; }  # KDE Connect
+      ];
+      allowedUDPPortRanges = [
+        { from = 1714; to = 1764; }  # KDE Connect
+      ];
     };
     hostName = "psh-xps13";
     networkmanager.enable = true;
@@ -151,6 +157,7 @@
     gimp
     git
     kate
+    kdeconnect
     nox
     okular
     nodePackages.node2nix
