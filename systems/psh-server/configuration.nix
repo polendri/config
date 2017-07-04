@@ -171,4 +171,9 @@ in
       enable = true;
     };
   };
+
+  # Hacks
+  nixpkgs.config.packageOverrides = pkgs: {
+    radicale = pkgs.radicale.overrideAttrs (oldAttrs: { propagatedBuildInputs = (oldAttrs.propagatedBuildInputs or []) ++ [ pkgs.pythonPackages.passlib ]; });
+  };
 }
