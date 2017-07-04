@@ -151,6 +151,7 @@
     ag
     ark
     curl
+    deluge
     discord
     docker_compose
     firefox
