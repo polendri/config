@@ -39,7 +39,6 @@ in
       sslKeyPath = sslCertificatesDir + "/home.pshendry.com/home.pshendry.com.key";
       dataDir = servicesDir + "/radicale";
     };
-    torrent.dataDir = servicesDir + "/torrents";
   };
 
   # NixOS configuration
