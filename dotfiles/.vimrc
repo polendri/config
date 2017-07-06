@@ -7,6 +7,7 @@ filetype plugin on  " Enable filetype plugins
 filetype indent on  " Enable indentation settings by filetype
 set autoread        " Re-read files automatically when they've been modified outside of Vim
 set encoding=utf8   " Set UTF8 as the standard encoding
+execute pathogen#infect()
 
 " Colours
 syntax enable  " Enable syntax highlighting
