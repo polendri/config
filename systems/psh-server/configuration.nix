@@ -166,9 +166,9 @@ in
       email = "paul@pshendry.com";
     };
 
-    unifi = {
-      enable = true;
-    };
+    unifi.enable = true;
+
+    fail2ban.enable = true;
   };
 
   # Hacks
