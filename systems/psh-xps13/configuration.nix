@@ -35,7 +35,7 @@
     ];
 
   # NixOS
-  system.stateVersion = "17.03";
+  system.stateVersion = "17.09";
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
     automatic = true;
@@ -163,6 +163,8 @@
     nox
     okular
     nodePackages.node2nix
+    python3
+    python3Packages.pylint
     steam
     tmux
     unetbootin

@@ -42,13 +42,14 @@ let g:mapleader = ","   " not to conflict with existing Vim keybindings
 nmap <leader>w :w!<cr>  " Define leader shortcut for quick saving
 
 " UI
-set number      " Show line numbers
-set so=5        " Always keep this many lines between the cursor and the screen edge
-set ruler       " Always show the current position
-set lazyredraw  " Don't redraw while executing macros, to improve performance
-set showmatch   " Show matching brackets when the cursor is over them
-set mat=2       " Blink for this many tenths of a second when matching brackets
-set visualbell  " Set a visual bell for errors instead of a beep
+set number           " Show line numbers
+set so=5             " Always keep this many lines between the cursor and the screen edge
+set ruler            " Always show the current position
+set lazyredraw       " Don't redraw while executing macros, to improve performance
+set showmatch        " Show matching brackets when the cursor is over them
+set mat=2            " Blink for this many tenths of a second when matching brackets
+set visualbell       " Set a visual bell for errors instead of a beep
+set colorcolumn=100  " Visual cue for line width at 100 columns
 
 " Text, tab and indents
 set expandtab          " Use spaces instead of tabs
@@ -67,3 +68,12 @@ map <C-j> <C-W>j  " Quicker shortcuts for moving between windows
 map <C-k> <C-W>k  "
 map <C-h> <C-W>h  "
 map <C-l> <C-W>l  "
+
+" Syntastic plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
