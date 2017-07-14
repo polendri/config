@@ -160,16 +160,19 @@
     git
     kate
     kdeconnect
+    lm_sensors
     nox
     okular
     nodePackages.node2nix
     python3
     python3Packages.pylint
+    qsyncthingtray
     steam
     tmux
     unetbootin
     unzip
     vim
+    vlc
     wget
     zip
   ];
