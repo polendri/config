@@ -115,6 +115,12 @@
 
   # Services
   services = {
+    redshift = {
+      enable = true;
+      latitude = "48.4284";
+      longitude = "-123.3656";
+    };
+
     syncthing = {
       enable = true;
       dataDir = "/home/pshendry/.local/share/syncthing";
@@ -151,6 +157,7 @@
   environment.systemPackages = with pkgs; [
     ag
     ark
+    audacity
     curl
     deluge
     discord
