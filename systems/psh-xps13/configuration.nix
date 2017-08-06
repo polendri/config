@@ -158,6 +158,7 @@
     ag
     ark
     audacity
+    chromium
     curl
     deluge
     discord
@@ -165,8 +166,10 @@
     firefox
     gimp
     git
+    inkscape
     kate
     kdeconnect
+    krita
     lm_sensors
     nox
     okular
