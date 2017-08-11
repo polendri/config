@@ -166,6 +166,7 @@
     firefox
     gimp
     git
+    homebank
     inkscape
     kate
     kdeconnect
