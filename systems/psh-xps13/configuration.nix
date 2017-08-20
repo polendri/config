@@ -200,6 +200,8 @@
   # System packages
   environment.systemPackages = with pkgs; [
     ag
+    androidsdk
+    android-studio-preview
     ark
     audacity
     chromium
