@@ -113,8 +113,52 @@
     };
   };
 
+  # Configuration files
+  environment.etc = {
+    pia_crt = {
+      source = ./pia/ca.rsa.2048.crt;
+      target = "pia/ca.rsa.2048.crt";
+    };
+    pia_pem = {
+      source = ./pia/crl.rsa.2048.pem;
+      target = "pia/crl.rsa.2048.pem";
+    };
+    pia_credentials = {
+      source = ./secrets/pia_credentials.txt;
+      target = "pia/credentials.txt";
+      mode = "0600";
+    };
+  };
+
   # Services
   services = {
+    openvpn.servers = {
+      pia = {
+        autoStart = false;
+        config = ''
+          client
+          dev tun0
+          proto udp
+          remote us-seattle.privateinternetaccess.com 1198
+          resolv-retry infinite
+          nobind
+          persist-key
+          persist-tun
+          cipher aes-128-cbc
+          auth sha1
+          tls-client
+          remote-cert-tls server
+          auth-user-pass /etc/pia/credentials.txt
+          comp-lzo
+          verb 1
+          reneg-sec 0
+          crl-verify /etc/pia/crl.rsa.2048.pem
+          ca /etc/pia/ca.rsa.2048.crt
+          disable-occ
+        '';
+      };
+    };
+
     redshift = {
       enable = true;
       latitude = "48.4284";
@@ -180,6 +224,7 @@
     qsyncthingtray
     steam
     tmux
+    traceroute
     unetbootin
     unzip
     vim

@@ -116,6 +116,7 @@ in
     bash
     caddy
     tmux
+    traceroute
     wget
     vim
     zip
