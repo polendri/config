@@ -81,6 +81,12 @@
     networkmanager.enable = true;
   };
 
+  # Key managemnet
+  programs.ssh = {
+    agentTimeout = "30m";
+    startAgent = true;
+  };
+
   # Localization and console
   i18n = {
     defaultLocale = "en_CA.UTF-8";
@@ -207,6 +213,7 @@
     chromium
     curl
     deluge
+    digikam
     discord
     docker_compose
     firefox
