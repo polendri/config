@@ -227,7 +227,6 @@
     lm_sensors
     nox
     okular
-    nodePackages.node2nix
     python3
     python3Packages.pylint
     qsyncthingtray
