@@ -235,7 +235,10 @@
     inkscape
     kate
     kdeconnect
+    keepassx2
+    krename
     krita
+    libreoffice-fresh
     lm_sensors
     nox
     okular
