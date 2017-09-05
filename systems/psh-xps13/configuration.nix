@@ -238,6 +238,7 @@
     homebank
     inkscape
     kate
+    kcalc
     kdeconnect
     keepassx2
     krename
@@ -250,7 +251,7 @@
     python3
     python3Packages.pylint
     qsyncthingtray
-    steam
+    (steam.override { newStdcpp = true; })  # See https://github.com/NixOS/nixpkgs/issues/25957
     texlive.combined.scheme-basic
     tmux
     traceroute
