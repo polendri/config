@@ -90,6 +90,10 @@
       '';
     };
     hostName = "psh-xps13";
+    nameservers = [
+      "209.222.18.222"  # PIA nameservers
+      "209.222.18.218"  #
+    ];
     networkmanager.enable = true;
   };
 
@@ -218,8 +222,8 @@
   # System packages
   environment.systemPackages = with pkgs; [
     ag
-    androidsdk
-    android-studio-preview
+    #androidsdk
+    #android-studio-preview
     ark
     audacity
     chromium
@@ -240,12 +244,14 @@
     krita
     libreoffice-fresh
     lm_sensors
+    monodevelop
     nox
     okular
     python3
     python3Packages.pylint
     qsyncthingtray
     steam
+    texlive.combined.scheme-basic
     tmux
     traceroute
     unetbootin
