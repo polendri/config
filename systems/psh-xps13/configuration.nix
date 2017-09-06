@@ -222,9 +222,10 @@
   # System packages
   environment.systemPackages = with pkgs; [
     ag
-    #androidsdk
-    #android-studio-preview
+    androidsdk
+    android-studio-preview
     ark
+    audaciousQt5
     audacity
     chromium
     curl
@@ -241,6 +242,8 @@
     kcalc
     kdeconnect
     keepassx2
+    kontact
+    konversation
     krename
     krita
     libreoffice-fresh
@@ -251,6 +254,8 @@
     python3
     python3Packages.pylint
     qsyncthingtray
+    # skanlite  # Doesn't exist yet
+    spectacle
     (steam.override { newStdcpp = true; })  # See https://github.com/NixOS/nixpkgs/issues/25957
     texlive.combined.scheme-basic
     tmux
