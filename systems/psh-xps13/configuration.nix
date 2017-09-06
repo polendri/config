@@ -221,50 +221,61 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    ag
-    androidsdk
-    android-studio-preview
-    ark
+    # Gaming
+    (steam.override { newStdcpp = true; })  # See https://github.com/NixOS/nixpkgs/issues/25957
+
+    # Internet
+    chromium
+    deluge
+    discord
+    firefox
+    konversation
+
+    # Multimedia
     audaciousQt5
     audacity
-    chromium
-    curl
-    deluge
     digikam
-    discord
-    docker_compose
-    firefox
     gimp
-    git
-    homebank
     inkscape
+    krita
+    okular
+    vlc
+
+    # Office
+    kontact
+    libreoffice-fresh
+    # skanlite  # Doesn't exist yet
+    texlive.combined.scheme-basic
+
+    # Software Development
+    androidsdk
+    android-studio-preview
+    docker_compose
+    git
+    monodevelop
+    python3
+    python3Packages.pylint
+    vscode
+
+    # Utilities
+    ag
+    ark
+    curl
+    homebank
     kate
     kcalc
     kdeconnect
     keepassx2
-    kontact
-    konversation
     krename
-    krita
-    libreoffice-fresh
     lm_sensors
-    monodevelop
     nox
-    okular
-    python3
-    python3Packages.pylint
     qsyncthingtray
-    # skanlite  # Doesn't exist yet
     spectacle
-    (steam.override { newStdcpp = true; })  # See https://github.com/NixOS/nixpkgs/issues/25957
-    texlive.combined.scheme-basic
     tmux
     traceroute
     unetbootin
     unzip
     vim
-    vlc
-    vscode
     wget
     wireshark
     zip
