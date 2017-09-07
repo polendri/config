@@ -235,9 +235,11 @@
     audaciousQt5
     audacity
     digikam
+    ffmpeg
     gimp
     inkscape
     krita
+    libav
     okular
     vlc
 
