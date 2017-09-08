@@ -255,6 +255,7 @@
     docker_compose
     git
     monodevelop
+    nixops
     python3
     python3Packages.pylint
     vscode
@@ -272,12 +273,14 @@
     lm_sensors
     nox
     qsyncthingtray
+    rsync
     spectacle
     tmux
     traceroute
     unetbootin
     unzip
     vim
+    virtualbox
     wget
     wireshark
     zip
