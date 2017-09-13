@@ -251,6 +251,7 @@
     libav
     okular
     vlc
+    zoom-us
 
     # Office
     kontact
@@ -263,7 +264,6 @@
     android-studio-preview
     docker_compose
     git
-    monodevelop
     nixops
     python3
     python3Packages.pylint
@@ -274,6 +274,8 @@
     ark
     curl
     homebank
+    iftop
+    iotop
     kate
     kcalc
     kdeconnect
@@ -281,6 +283,8 @@
     krename
     lm_sensors
     nox
+    ntfs3g
+    partition-manager
     qsyncthingtray
     rsync
     spectacle
