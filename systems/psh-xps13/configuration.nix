@@ -35,7 +35,7 @@
     ];
 
   # NixOS
-  system.stateVersion = "17.09";
+  system.stateVersion = "18.03";
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
     automatic = true;
