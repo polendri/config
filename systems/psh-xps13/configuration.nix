@@ -119,7 +119,7 @@
     users = {
       pshendry = {
         description = "Paul Hendry";
-        extraGroups = [ "wheel" "networkmanager" "docker" ];
+        extraGroups = [ "wheel" "networkmanager" "docker" "plugdev" "vboxusers" ];
         hashedPassword = "$6$36L2gVyWVe$cIN7ZWX4ekceU.JMMnvThhmVq.PaB6PtOKl4Ec3N/1OOcVGQfND.8cpFjrRa2BEK/hEdBAw6gqHUckYpsnOV00";
         isNormalUser = true;
         uid = 1000;
@@ -217,7 +217,16 @@
       };
     };
   };
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    virtualbox.host = {
+      enable = true;
+      addNetworkInterface = true;
+    };
+  };
+  # Enables more VirtualBox features, but requires compilation of VirtualBox which takes ages...
+  # Maybe with distributed builds enabled this will be do-able?
+  # nixpkgs.config.virtualbox.enableExtensionPack = true;
 
   # System packages
   environment.systemPackages = with pkgs; [
@@ -280,7 +289,6 @@
     unetbootin
     unzip
     vim
-    virtualbox
     wget
     wireshark
     zip
