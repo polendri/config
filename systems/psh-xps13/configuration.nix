@@ -181,6 +181,12 @@
       };
     };
 
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ gutenprint ];
+      webInterface = false;
+    };
+
     redshift = {
       enable = true;
       latitude = "48.4284";
