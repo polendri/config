@@ -163,5 +163,12 @@ in
         '';
       };
     };
+
+    # Hack to provide passlib to radicale, so that bcrypt password hashing can be used
+    nixpkgs.config.packageOverrides = pkgs: {
+      radicale = pkgs.radicale.overrideAttrs (oldAttrs: {
+        propagatedBuildInputs = (oldAttrs.propagatedBuildInputs or []) ++ [ pkgs.pythonPackages.passlib ];
+      });
+    };
   };
 }

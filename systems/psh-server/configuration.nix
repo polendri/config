@@ -27,9 +27,8 @@ in
   # Configuration submodules
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ../server.nix
       ./radicale-configuration.nix
-      ./torrent-configuration.nix
     ];
 
   # Configuration for submodules
@@ -41,14 +40,9 @@ in
     };
   };
 
-  # NixOS configuration
-  system.stateVersion = "17.03";
-  nixpkgs.config.allowUnfree = true;
-
   # Boot
   boot.loader = {
     systemd-boot.enable = true;
-    timeout = null;
     efi.canTouchEfiVariables = true;
   };
 
@@ -75,30 +69,8 @@ in
     firewall.enable = false;
   };
 
-  # Internationalisation properties
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
-
-  # Time zone
-  time.timeZone = "America/Vancouver";
-
-  # Nix store garbage collection
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 30d";
-  };
-
-  # User accounts.
+  # Users
   users.extraUsers = {
-    pshendry = {
-      uid = 1000;
-      isNormalUser = true;
-      description = "Paul Hendry";
-      extraGroups = [ "wheel" "lpadmin" ];
-    };
     ecmccutc = {
       uid = 1001;
       isNormalUser = true;
@@ -110,70 +82,51 @@ in
     };
   };
 
-  # Packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
+  # System packages
   environment.systemPackages = with pkgs; [
-    bash
     caddy
-    tmux
-    traceroute
-    wget
-    vim
-    zip
   ];
 
   # Services
-  services = {
-    openssh = {
-      enable = true;
-      permitRootLogin = "no";
-    };
-
-    samba = {
-      enable = true;
-      shares = {
-        psh-share = {
-          path = dataDir;
-          browseable = "yes";
-          "guest ok" = "no";
-          "valid users" = "pshendry, ecmccutc, mediapc";
-          "read only" = "no";
-        };
+  services.samba = {
+    enable = true;
+    shares = {
+      psh-share = {
+        path = dataDir;
+        browseable = "yes";
+        "guest ok" = "no";
+        "valid users" = "pshendry, ecmccutc, mediapc";
+        "read only" = "no";
       };
     };
-  
-    gitolite = {
-      enable = true;
-      dataDir = servicesDir + "/gitolite";
-      user = "git";
-      adminPubkey = "";
-    };
-  
-    syncthing = {
-      enable = true;
-      dataDir = servicesDir + "/syncthing";
-      systemService = true;
-    };
-
-    caddy = {
-      enable = true;
-      agree = true;
-      config = ''
-        home.pshendry.com {
-          root ${servicesDir}/www/home.pshendry.com
-          gzip
-        }
-      '';
-      email = "paul@pshendry.com";
-    };
-
-    unifi.enable = true;
-
-    fail2ban.enable = true;
   };
 
-  # Hacks
-  nixpkgs.config.packageOverrides = pkgs: {
-    radicale = pkgs.radicale.overrideAttrs (oldAttrs: { propagatedBuildInputs = (oldAttrs.propagatedBuildInputs or []) ++ [ pkgs.pythonPackages.passlib ]; });
+  services.gitolite = {
+    enable = true;
+    dataDir = servicesDir + "/gitolite";
+    user = "git";
+    adminPubkey = "";
   };
+
+  services.syncthing = {
+    enable = true;
+    dataDir = servicesDir + "/syncthing";
+    systemService = true;
+  };
+
+  services.caddy = {
+    enable = true;
+    agree = true;
+    config = ''
+      home.pshendry.com {
+        root ${servicesDir}/www/home.pshendry.com
+        gzip
+      }
+    '';
+    email = "paul@pshendry.com";
+  };
+
+  services.unifi.enable = true;
+
+  services.fail2ban.enable = true;
 }
