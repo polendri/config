@@ -12,7 +12,6 @@
 #
 # TODO:
 #   * Enable Firewall
-#   * Review radicale configuration
 #   * Avoid the Caddy permissions change; switch to services.acme for
 #     provisioning Let's Encrypt certs, since it has user/group params?
 
@@ -71,14 +70,17 @@ in
 
   # Users
   users.extraUsers = {
+    pshendry.hashedPassword = "$6$I29u6yPCbyZSoaA$eq80uPlFhIylJaUE6pFlL6dBgoUiF.LK3CElIJUanXex3RXmeQXbrSS3qoMqs/J4YvhmAHp4RDQFVqE25p7t.0";
     ecmccutc = {
       uid = 1001;
-      isNormalUser = true;
       description = "Emma McCutcheon";
+      hashedPassword = "$6$OEqLtIC1uaBktL$7H8sNgUVMN8LiT2Wl9iCTE27ZDeyd4AZof65kUvcAiCZDKxUbAX3jAKYR.uCQpg8pCGaqUzSWG50kzBpBIv0F1";
+      isNormalUser = true;
     };
     mediapc = {
       uid = 1002;
       description = "Media PC";
+      hashedPassword = "$6$UZ3v9h0GT$D4zKMueRE3XQ9tkz3TNdFQAFL5H0IDt/XBsQmO/yXiFVwBUFmGkPU96IbPnduj/h86v1/Bqebj7/tll/LeyWb.";
     };
   };
 

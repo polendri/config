@@ -55,6 +55,7 @@
     curl
     iftop
     iotop
+    mkpasswd
     nox
     ntfs3g
     rsync
