@@ -36,12 +36,10 @@
   ];
 
   # Boot and filesystems
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      timeout = 0;
-    };
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 0;
   };
   # Spare the SSD from writes to set access timestamps
   fileSystems."/".options = [ "noatime" "nodiratime" ];
