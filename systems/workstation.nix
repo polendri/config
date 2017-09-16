@@ -78,7 +78,7 @@
   # System packages
   environment.systemPackages = with pkgs; [
     # Gaming
-    (steam.override { newStdcpp = true; })  # See https://github.com/NixOS/nixpkgs/issues/25957
+    steam
 
     # Internet
     chromium
