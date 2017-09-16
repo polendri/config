@@ -79,6 +79,10 @@
       '';
     };
     hostName = "psh-xps13";
+    nameservers = [
+      "209.222.18.222"  # PIA nameservers
+      "209.222.18.218"  #
+    ];
   };
 
   # Users

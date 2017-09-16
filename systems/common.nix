@@ -18,13 +18,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking and firewall
-  networking = {
-    firewall.allowPing = true;
-    nameservers = [
-      "209.222.18.222"  # PIA nameservers
-      "209.222.18.218"  #
-    ];
-  };
+  networking.firewall.allowPing = true;
 
   # Localization and console
   i18n = {
