@@ -114,6 +114,7 @@
     ffmpeg
     gimp
     inkscape
+    kodi
     krita
     libav  # For Video DownloadHelper in Firefox
     okular
