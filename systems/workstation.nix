@@ -91,6 +91,7 @@
     audaciousQt5
     audacity
     digikam
+    ffmpeg
     gimp
     inkscape
     krita
@@ -122,6 +123,7 @@
     keepassx2
     krename
     lm_sensors
+    ntfs3g
     partition-manager
     qsyncthingtray
     spectacle

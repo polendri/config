@@ -45,19 +45,12 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    # Multimedia
-    ffmpeg
-
-    # Software Development
-    git
-
-    # Utilities
     curl
+    git
     iftop
     iotop
     mkpasswd
     nox
-    ntfs3g
     rsync
     tmux
     traceroute
