@@ -136,9 +136,7 @@
   # nixpkgs.config.virtualbox.enableExtensionPack = true;
 
   # System packages
-  environment.systemPackages = with pkgs; [
-    # Internet
-    zoom-us
-  ];
+  #environment.systemPackages = with pkgs; [
+  #];
 
 }
