@@ -18,7 +18,7 @@
 { config, pkgs, ... }:
 
 let
-  dataDir = "/mnt/data";
+  shareDir = "/mnt/data/share";
   servicesDir = "/mnt/data/services";
   sslCertificatesDir = "/var/lib/caddy/.caddy/acme/acme-v01.api.letsencrypt.org/sites";
 in
@@ -82,6 +82,11 @@ in
       description = "Media PC";
       hashedPassword = "$6$UZ3v9h0GT$D4zKMueRE3XQ9tkz3TNdFQAFL5H0IDt/XBsQmO/yXiFVwBUFmGkPU96IbPnduj/h86v1/Bqebj7/tll/LeyWb.";
     };
+    rpi2 = {
+      uid = 1003;
+      description = "Raspberry Pi 2";
+      hashedPassword = "$6$ozs9JFcbQcmrsHA$ZM6j9KE6BAb6bcshTwG.H5uSJ4lWIw8wULFYgPTPZcArQdXykPMT/WM3GhrbzsXTLIyjdOXKLcfB9BZn3dOWe/";
+    };
   };
 
   # System packages
@@ -94,10 +99,10 @@ in
     enable = true;
     shares = {
       psh-share = {
-        path = dataDir;
+        path = shareDir;
         browseable = "yes";
         "guest ok" = "no";
-        "valid users" = "pshendry, ecmccutc, mediapc";
+        "valid users" = "pshendry, ecmccutc, mediapc, rpi2";
         "read only" = "no";
       };
     };
