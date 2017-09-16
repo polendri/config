@@ -58,26 +58,6 @@
 
   # Networking and firewall
   networking = {
-    firewall = {
-      allowedTCPPorts = [
-        445  # Samba
-      ];
-      allowedTCPPortRanges = [
-        { from = 1714; to = 1764; }  # KDE Connect
-        { from = 137;  to = 139; }   # Samba
-      ];
-      allowedUDPPortRanges = [
-        { from = 1714; to = 1764; }  # KDE Connect
-      ];
-      autoLoadConntrackHelpers = true;
-      connectionTrackingModules = [ "netbios_ns" ];
-      extraCommands = ''
-        iptables -t raw -A OUTPUT -d 192.168.0.0/16 -p udp -m udp --dport 137 -j CT --helper netbios-ns
-      '';
-      extraStopCommands = ''
-        iptables -t raw -D OUTPUT -d 192.168.0.0/16 -p udp -m udp --dport 137 -j CT --helper netbios-ns
-      '';
-    };
     hostName = "psh-xps13";
     nameservers = [
       "209.222.18.222"  # PIA nameservers
@@ -159,9 +139,6 @@
   environment.systemPackages = with pkgs; [
     # Internet
     zoom-us
-
-    # Utilities
-    kdeconnect
   ];
 
 }
