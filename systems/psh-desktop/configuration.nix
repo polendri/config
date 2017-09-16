@@ -18,11 +18,11 @@
     fsType = "vfat";
   };
   fileSystems."/mnt/data_ssd" = {
-    device = "/dev/disk/by-uuid/0F6B1D7004144BCF";
+    device = "/dev/disk/by-uuid/123A42B13A4291A1";
     fsType = "ntfs";
   };
   fileSystems."/mnt/data_hdd" = {
-    device = "/dev/disk/by-uuid/7FD9AE414EA2CDDA";
+    device = "/dev/disk/by-uuid/DEEE5D92EE5D6435";
     fsType = "ntfs";
   };
 
