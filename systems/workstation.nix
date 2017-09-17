@@ -14,7 +14,14 @@
       driSupport = true;
       driSupport32Bit = true;
     };
-    pulseaudio.enable = true;
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+    };
+    sane = {
+      enable = true;
+      extraBackends = with pkgs; [ hplip ];
+    };
   };
   powerManagement.enable = true;
 
@@ -123,7 +130,7 @@
     # Office
     kontact
     libreoffice-fresh
-    # skanlite  # Doesn't exist yet
+    simple-scan
     texlive.combined.scheme-basic
 
     # Software Development
