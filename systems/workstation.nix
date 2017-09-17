@@ -124,6 +124,7 @@
     kodi
     krita
     libav  # For Video DownloadHelper in Firefox
+    musescore
     okular
     vlc
 
