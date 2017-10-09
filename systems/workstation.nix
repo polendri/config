@@ -117,14 +117,14 @@
     # Multimedia
     audaciousQt5
     audacity
-    digikam
+    # digikam  # Build broken
     ffmpeg
     gimp
     inkscape
     kodi
     krita
     libav  # For Video DownloadHelper in Firefox
-    musescore
+    # musescore  # Build broken
     okular
     vlc
 
