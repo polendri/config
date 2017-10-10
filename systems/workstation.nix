@@ -139,6 +139,7 @@
     android-studio-preview
     docker_compose
     nixops
+    openjdk
     python3
     python3Packages.pylint
     vscode
