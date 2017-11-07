@@ -129,7 +129,10 @@
     vlc
 
     # Office
+    kaddressbook
+    kmail
     kontact
+    korganizer
     libreoffice-fresh
     simple-scan
     texlive.combined.scheme-basic
