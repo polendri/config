@@ -1,0 +1,14 @@
+[user]
+	name = Paul Hendry
+	email = paul@pshendry.com
+[core]
+	editor = vim
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+

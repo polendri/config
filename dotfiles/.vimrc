@@ -1,18 +1,11 @@
-" TODO:
-"   * ctags
-"   * Tab shortcuts
-
 set nocompatible    " Enter the current millenium
 filetype plugin on  " Enable filetype plugins
 filetype indent on  " Enable indentation settings by filetype
 set autoread        " Re-read files automatically when they've been modified outside of Vim
 set encoding=utf8   " Set UTF8 as the standard encoding
-execute pathogen#infect()
 
 " Colours
 syntax enable  " Enable syntax highlighting
-set background=dark
-colorscheme solarized
 
 " Netrw
 let g:netrw_banner=0                          " Disable directory banner
@@ -69,11 +62,3 @@ map <C-k> <C-W>k  "
 map <C-h> <C-W>h  "
 map <C-l> <C-W>l  "
 
-" Syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
