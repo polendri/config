@@ -33,6 +33,7 @@ in
       package = pkgs.radicale2;
       config = ''
         [server]
+        hosts = 0.0.0.0:5232
         ssl = True
         certificate = ${cfg.sslCertPath}
         key = ${cfg.sslKeyPath}
@@ -68,7 +69,7 @@ in
         text = ''
           [owner-readwrite]
           user: .+
-          collection: ^%(login)s/.*$
+          collection: ^%(login)s(/.*)?$
           permission: rw
   
           [everyone-shared-readwrite]
