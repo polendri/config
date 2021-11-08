@@ -1,8 +1,10 @@
 [user]
 	name = Paul Hendry
-	email = paul@pshendry.com
+	email = paul@ijj.li
 [core]
-	editor = vim
+	editor = nvim
+[init]
+	defaultBranch = main
 [diff]
     tool = vscode
 [difftool "vscode"]
@@ -11,6 +13,5 @@
     tool = vscode
 [mergetool "vscode"]
     cmd = code --wait $MERGED
-
 [push]
 	default = current
